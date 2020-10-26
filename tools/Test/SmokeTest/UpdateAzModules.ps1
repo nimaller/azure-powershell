@@ -24,13 +24,11 @@ Get-Module -Name Az.* -ListAvailable
 # Check Az version
 Import-Module -MinimumVersion '2.6.0' -Name 'Az' -Force -Scope 'Global'
 $azVersion = (get-module Az).Version
+Write-Host "Az version before updated", $previousVersion
 Write-Host "Current version of Az", $azVersion
 
-if ([System.Version]$azVersion -lt [System.Version]$previousVersion) {
-    throw "Update Az failed"
-}
-elseif([System.Version]$azVersion -eq [System.Version]$previousVersion){
-    Write-Warning "Az did not update"
-}else{
+if ([System.Version]$azVersion -gt [System.Version]$previousVersion) {
     Write-Host "Update Az successfully"
+}else{
+    throw "Update Az failed"
 }

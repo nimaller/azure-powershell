@@ -135,7 +135,7 @@ jobs:
     displayName: Install an individual module
     inputs:
       filePath: 'tools/Test/SmokeTest/ScriptsCaller.ps1'
-      arguments: '-RequiredPsVersion $(PSVersion) -Script "./tools/Test/SmokeTest/InstallAnIndividualModule.ps1 -Gallery $(GalleryName)"'  
+      arguments: '-RequiredPsVersion $(PSVersion) -Script "./tools/Test/SmokeTest/InstallAnIndividualModule.ps1 -Gallery $(GalleryName) "'  
 
   - task: PowerShell@2
     displayName: Clean Az Modules
@@ -147,7 +147,7 @@ jobs:
     displayName: Update an individual module
     inputs:
       filePath: 'tools/Test/SmokeTest/ScriptsCaller.ps1'
-      arguments: '-RequiredPsVersion $(PSVersion) -Script "./tools/Test/SmokeTest/UpdateAnIndividualModule.ps1 -Gallery $(GalleryName)"'  
+      arguments: '-RequiredPsVersion $(PSVersion) -Script "./tools/Test/SmokeTest/UpdateAnIndividualModule.ps1 -Gallery $(GalleryName) -AllowEquality $(AllowEquality) "'  
 
   - task: PowerShell@2
     displayName: Clean Az Modules
@@ -159,7 +159,7 @@ jobs:
     displayName: Install Az on top of an individual module
     inputs:
       filePath: 'tools/Test/SmokeTest/ScriptsCaller.ps1'
-      arguments: '-RequiredPsVersion $(PSVersion) -Script "./tools/Test/SmokeTest/InstallAzOnTopOfAnIndividualModule.ps1 -Gallery $(GalleryName)"'  
+      arguments: '-RequiredPsVersion $(PSVersion) -Script "./tools/Test/SmokeTest/InstallAzOnTopOfAnIndividualModule.ps1 -Gallery $(GalleryName) -AllowEquality $(AllowEquality) "'  
  
   - task: PowerShell@2
     displayName: Clean Az Modules
@@ -171,4 +171,4 @@ jobs:
     displayName: Install an individual module on top of Az
     inputs:
       filePath: 'tools/Test/SmokeTest/ScriptsCaller.ps1'
-      arguments: '-RequiredPsVersion $(PSVersion) -Script "./tools/Test/SmokeTest/InstallAnIndividualModuleOnTopOfAz.ps1 -Gallery $(GalleryName)"'
+      arguments: '-RequiredPsVersion $(PSVersion) -Script "./tools/Test/SmokeTest/InstallAnIndividualModuleOnTopOfAz.ps1 -Gallery $(GalleryName) -AllowEquality $(AllowEquality) "'
