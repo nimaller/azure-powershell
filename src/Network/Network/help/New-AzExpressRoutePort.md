@@ -16,16 +16,16 @@ Creates an Azure ExpressRoutePort.
 ```
 New-AzExpressRoutePort -ResourceGroupName <String> -Name <String> -PeeringLocation <String>
  -BandwidthInGbps <Int32> -Encapsulation <String> -Location <String> [-Tag <Hashtable>]
- [-Link <PSExpressRouteLink[]>] [-Force] [-AsJob] [-Identity <PSManagedServiceIdentity>]
+ [-Link <PSExpressRouteLink[]>] [-BillingType <String>] [-Force] [-AsJob] [-Identity <PSManagedServiceIdentity>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ResourceIdParameterSet
 ```
 New-AzExpressRoutePort -ResourceId <String> -PeeringLocation <String> -BandwidthInGbps <Int32>
- -Encapsulation <String> -Location <String> [-Tag <Hashtable>] [-Link <PSExpressRouteLink[]>] [-Force] [-AsJob]
- [-Identity <PSManagedServiceIdentity>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ -Encapsulation <String> -Location <String> [-Tag <Hashtable>] [-Link <PSExpressRouteLink[]>] [-BillingType <String>] 
+ [-Force] [-AsJob] [-Identity <PSManagedServiceIdentity>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -119,6 +119,20 @@ Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
+
+### -BillingType
+Billing type of the port
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: MeteredData
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
 
 ### -Force
 Do not ask for confirmation if you want to overwrite a resource
